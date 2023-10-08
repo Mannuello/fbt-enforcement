@@ -5,7 +5,7 @@
 ## Running
 To run this script, navigate to the top level of this repo and run the main module as seen below
 ```
-python -m fbt_enforcement.main
+python -m fbt_enforcement
 ```
 
 ## Linters and formatters Used

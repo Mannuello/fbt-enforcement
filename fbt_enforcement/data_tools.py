@@ -2,7 +2,7 @@ import os
 import random
 from typing import Any
 
-from fake_car_data import car_data
+from .fake_car_data import car_data
 
 
 def get_all_car_data_records() -> list[dict[str, Any]]:

@@ -26,10 +26,6 @@ jobs:
       run: |
         black . --check --diff
 
-    - name: Run isort
-      run: |
-        isort . --check-only --diff
-
     - name: Run mypy
       run: |
         mypy .

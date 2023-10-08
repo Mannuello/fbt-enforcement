@@ -11,5 +11,4 @@ python -m fbt_enforcement.main
 ## Linters and formatters
 These formatters will be used during the build process. You must address any linting or formatting issues locally. 
 - black
-- mypy 
-- isort 
+- mypy

@@ -24,23 +24,7 @@ def read_plate_from_image(image_path: str) -> str:
     # Apply Gaussian blur to smooth out the edges
     gray = cv2.GaussianBlur(gray, (5, 5), 0)
 
-    # Apply thresholding to get a binary image
-    _, binary_img = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
-    # Define your configuration settings
-    myconfig = r"--psm 9 --oem 3 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-
-    # Rescale the image, if needed.
-    # gray = cv2.resize(img, None, fx=1.5, fy=1.5, interpolation=cv2.INTER_CUBIC)
-
-    # Recognize text with Tesseract for Python
-    result = pytesseract.image_to_string(Image.fromarray(binary_img), config=myconfig)
-    # Remove the first character from result, erroneous
-    result = result[1:]
-    return result
-
-
-#######################################################################################################
 
 
 def get_single_car_data(plate_number: str, car_records: list) -> dict:

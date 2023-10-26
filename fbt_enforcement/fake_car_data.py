@@ -1,6 +1,6 @@
 car_data = [
     {
-        "plate_number": "ZAU737",
+        "plate_number": "HG54HA",
         "owner": {
             "name": "John Doe",
             "address": "123 Main St, Honolulu, HI",
@@ -17,7 +17,7 @@ car_data = [
         "miles_per_hour": 75,
     },
     {
-        "plate_number": "299YX",
+        "plate_number": "HYM945P",
         "owner": {
             "name": "Jane Smith",
             "address": "456 Elm St, Cheyenne, WY",
@@ -34,7 +34,7 @@ car_data = [
         "miles_per_hour": 60,
     },
     {
-        "plate_number": "GDA357",
+        "plate_number": "VCP2429",
         "owner": {
             "name": "Bob Johnson",
             "address": "789 Oak St, New Orleans, LA",
@@ -51,7 +51,7 @@ car_data = [
         "miles_per_hour": 85,
     },
     {
-        "plate_number": "PAK-7987",
+        "plate_number": "GRG29TA",
         "owner": {
             "name": "Emily Williams",
             "address": "101 Maple St, Ashevill, NC",

@@ -1,8 +1,9 @@
+import os
+
+import cv2
 import numpy as np
 import pytesseract
 from PIL import Image
-import cv2
-import os
 
 
 def read_plate_from_image(image_path: str) -> str:

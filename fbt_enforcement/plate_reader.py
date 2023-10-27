@@ -10,9 +10,6 @@ def read_plate_from_image(image_path: str) -> str:
     # Read image using opencv
     img = cv2.imread(image_path)
 
-    # Extract the file name without the file extension
-    file_name = os.path.splitext(os.path.basename(image_path))[0]
-
     # Convert to gray
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 

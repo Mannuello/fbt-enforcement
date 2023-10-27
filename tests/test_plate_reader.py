@@ -1,5 +1,4 @@
-from fbt_enforcement.plate_reader import (get_single_car_data,
-                                          read_plate_from_image)
+from fbt_enforcement.plate_reader import get_single_car_data, read_plate_from_image
 
 
 def test_read_plate_from_image():

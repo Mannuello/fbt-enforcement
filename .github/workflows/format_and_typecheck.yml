@@ -32,3 +32,7 @@ jobs:
     - name: Run black
       run: |
         black . --check --diff
+
+    - name: Run tests
+      run: |
+        pytest

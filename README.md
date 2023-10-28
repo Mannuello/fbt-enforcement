@@ -9,7 +9,11 @@ python -m fbt_enforcement
 ```
 
 ## Linters and formatters Used
+- isort
 - black
-- mypy
 
-Note: These linters and formatters will be used during the build process and you must address any issues locally or the build will fail. 
+To run the linters and formatter above use the following command in this particular order:
+```
+isort . && black .
+```
+Note: The linters and formatter will be used during the build process and you must address any issues locally or the build will fail. 

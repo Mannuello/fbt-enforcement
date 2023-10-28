@@ -1,7 +1,7 @@
 from fbt_enforcement.plate_reader import get_single_car_data, read_plate_from_image
 
 
-def test_read_plate_from_image():
+def test_read_plate_from_image() -> None:
     plate_1 = read_plate_from_image("fbt_enforcement/plates/euro_plate_1.png")
     plate_2 = read_plate_from_image("fbt_enforcement/plates/euro_plate_2.png")
     plate_3 = read_plate_from_image("fbt_enforcement/plates/euro_plate_3.png")
@@ -13,7 +13,7 @@ def test_read_plate_from_image():
     assert plate_4 == "GRG29TA"
 
 
-def test_get_single_car_data(fake_car_data):
+def test_get_single_car_data(fake_car_data: list) -> None:
     car_data = get_single_car_data("HG54HA", fake_car_data)
     assert car_data["owner"]["name"] == "John Doe"
 

@@ -35,6 +35,7 @@ def read_plate_from_image(image_path: str) -> str:
     )
     # Remove the first character from result, erroneous
     plate_number = plate_number[1:]
+    plate_number = plate_number.strip()
     logger.info(f"Plate number: {plate_number} read from path: {image_path}")
     return plate_number
 

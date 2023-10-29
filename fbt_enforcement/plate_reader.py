@@ -1,7 +1,10 @@
 import cv2
 import numpy as np
 import pytesseract
+import logging
 from PIL import Image
+
+logger = logging.getLogger(__name__)
 
 
 def read_plate_from_image(image_path: str) -> str:
@@ -27,15 +30,21 @@ def read_plate_from_image(image_path: str) -> str:
     myconfig = r"--psm 9 --oem 3 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
     # Recognize text with Tesseract for Python
-    result = pytesseract.image_to_string(Image.fromarray(binary_img), config=myconfig)
+    plate_number = pytesseract.image_to_string(
+        Image.fromarray(binary_img), config=myconfig
+    )
     # Remove the first character from result, erroneous
-    result = result[1:]
-    return result
+    plate_number = plate_number[1:]
+    logger.info(f"Plate number: {plate_number} read from path: {image_path}")
+    return plate_number
 
 
 def get_single_car_data(plate_number: str, car_records: list) -> dict:
     """Uses a plate number to find an associated car record and returns a single instance"""
     for record in car_records:
         if record.get("plate_number") == plate_number:
+            logger.info(f"Single car record found with plate: {plate_number}")
             return record
+
+    logger.info(f"Unable to find match with plate number: {plate_number}")
     return {}

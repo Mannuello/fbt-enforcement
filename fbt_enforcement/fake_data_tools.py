@@ -9,16 +9,16 @@ from .fake_car_data import car_data
 logger = logging.getLogger(__name__)
 
 
-def fake_get_all_car_data_records() -> list[dict[str, Any]]:
+def fake_car_data() -> list[dict[str, Any]]:
     """Returns all car records"""
     logger.info("Mock API call retrieved all car data records")
     return car_data
 
 
-def fake_get_random_plate_path_from_directory() -> str:
+def fake_plate_asset_path() -> str:
     """Returns a random plate image path from a directory of 4 plate images"""
     # Get the directory where the current script is located
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    script_dir = os.path.dirname(os.path.relpath(__file__))
 
     # Define the relative path to the "plates" directory
     directory_path = os.path.join(script_dir, "plates")

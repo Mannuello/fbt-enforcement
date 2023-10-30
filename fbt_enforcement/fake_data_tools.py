@@ -5,6 +5,7 @@ from typing import Any
 
 from .fake_car_data import car_data
 
+
 logger = logging.getLogger(__name__)
 
 

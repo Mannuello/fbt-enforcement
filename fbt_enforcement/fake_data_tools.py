@@ -1,18 +1,38 @@
 import os
 import random
 import logging
-from typing import Any
-
-from .fake_car_data import car_data
-
+from faker import Faker
 
 logger = logging.getLogger(__name__)
 
 
-def fake_car_data() -> list[dict[str, Any]]:
-    """Returns all car records"""
+def fake_plate_data():
+    fake = Faker()
     logger.info("Mock API call retrieved all car data records")
-    return car_data
+    plate_numbers = ["HG54HA", "HYM945P", "VCP2429", "GRG29TA"]
+    return [
+        {
+            "plate_number": plate,
+            "owner": {
+                "name": fake.name(),
+                "address": fake.address(),
+                "phone": fake.phone_number(),
+                "email": fake.email(),
+            },
+            "vehicle": {
+                "make": fake.company(),
+                "model": fake.word(),
+                "year": fake.year(),
+                "color": fake.color_name(),
+                "vin": fake.bothify(
+                    text="###??#?##??####?#??",
+                    letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                ),
+            },
+            "miles_per_hour": fake.random_int(min=50, max=100),
+        }
+        for plate in plate_numbers
+    ]
 
 
 def fake_plate_asset_path() -> str:

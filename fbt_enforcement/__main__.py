@@ -1,6 +1,6 @@
 import logging
 from fbt_enforcement.fake_data_tools import (
-    fake_car_data,
+    fake_plate_data,
     fake_plate_asset_path,
 )
 from fbt_enforcement.plate_reader import read_plate_from_image
@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     # Generating fake data
     plate_img_path = fake_plate_asset_path()
-    all_car_data = fake_car_data()
+    all_car_data = fake_plate_data()
 
     # Core App Logic
     if plate_number := read_plate_from_image(plate_img_path):

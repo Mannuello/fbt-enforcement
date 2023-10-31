@@ -17,17 +17,14 @@ def fake_plate_data():
                 "name": fake.name(),
                 "address": fake.address(),
                 "phone": fake.phone_number(),
-                "email": fake.email(),
+                "email": fake.ascii_email(),
             },
             "vehicle": {
-                "make": fake.company(),
-                "model": fake.word(),
+                "make": random.choice(["Toyota", "Honda", "Ford", "Telsa"]),
+                "model": random.choice(["Civic", "Accord", "CR-V", "Pilot"]),
                 "year": fake.year(),
                 "color": fake.color_name(),
-                "vin": fake.bothify(
-                    text="###??#?##??####?#??",
-                    letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-                ),
+                "vin": fake.vin(),
             },
             "miles_per_hour": fake.random_int(min=50, max=100),
         }

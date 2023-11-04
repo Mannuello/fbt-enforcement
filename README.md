@@ -3,11 +3,15 @@
 ## Description
 The FBT Enforcement Application is an application that simulates components of a traffic enforcement application. 
 
-It has the following features:
+## Team and Roles: 
+https://github.com/Mannuello - Engineer/Researcher
+https://github.com/BrettskiPy - Engineer/QA/DevOps
+
+### Features:
 - License plate recognition
-- Custom PDF creations 
-    - Speeding fine collection
-    - Driver address update notifications
+- Custom mailer PDF generation
+    - Speeding fine collection letter
+    - Driver address update letter
 - Retrieves mock car data via API
 - Full logging
 - Pytest Suite
@@ -15,6 +19,14 @@ It has the following features:
     - Build
     - Automated Testing
     - Code Formatting Checks  
+
+### App Operational Order
+1. Generate app fake data
+2. Use fake image path to retrieve image
+3. Read text from plate image using the OCR
+4. Find match and return a single car record within the fake care data
+5. Issue PDF tickets to drivers who violate the speed limit
+6. Issue PDF notifications to drivers who have incomplete car records
 
 ## Running
 To run this script, navigate to the top level of this repo and run the main module as seen below:

@@ -1,24 +1,41 @@
 import os
 import random
 import logging
-from typing import Any
-
-from .fake_car_data import car_data
-
+from faker import Faker
 
 logger = logging.getLogger(__name__)
 
 
-def fake_get_all_car_data_records() -> list[dict[str, Any]]:
-    """Returns all car records"""
+def fake_plate_data():
+    fake = Faker()
     logger.info("Mock API call retrieved all car data records")
-    return car_data
+    plate_numbers = ["HG54HA", "HYM945P", "VCP2429", "GRG29TA"]
+    return [
+        {
+            "plate_number": plate,
+            "owner": {
+                "name": fake.name(),
+                "address": fake.address(),
+                "phone": fake.phone_number(),
+                "email": fake.ascii_email(),
+            },
+            "vehicle": {
+                "make": random.choice(["Toyota", "Honda", "Ford", "Telsa"]),
+                "model": random.choice(["Civic", "Accord", "CR-V", "Pilot"]),
+                "year": fake.year(),
+                "color": fake.color_name(),
+                "vin": fake.vin(),
+            },
+            "miles_per_hour": fake.random_int(min=50, max=100),
+        }
+        for plate in plate_numbers
+    ]
 
 
-def fake_get_random_plate_path_from_directory() -> str:
+def fake_plate_asset_path() -> str:
     """Returns a random plate image path from a directory of 4 plate images"""
     # Get the directory where the current script is located
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    script_dir = os.path.dirname(os.path.relpath(__file__))
 
     # Define the relative path to the "plates" directory
     directory_path = os.path.join(script_dir, "plates")

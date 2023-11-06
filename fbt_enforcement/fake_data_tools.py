@@ -32,7 +32,7 @@ def fake_plate_data():
     ]
 
 
-def fake_plate_asset_path() -> str:
+def fake_plate_asset_path() -> str | None:
     """Returns a random plate image path from a directory of 4 plate images"""
     # Get the directory where the current script is located
     plate_asset_dir = os.path.dirname(os.path.abspath(__file__))

@@ -25,12 +25,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Install Tesseract-OCR
-      run: sudo apt-get install tesseract-ocr
+    - name: Linter
+        run: ruff check . --fix
 
-    - name: Run black
-      run: |
-        black . --check --diff
+    - name: Formatter
+        run: ruff format .
 
     - name: Run tests
       run: |

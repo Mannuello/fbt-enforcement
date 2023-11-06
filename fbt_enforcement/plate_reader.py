@@ -44,7 +44,7 @@ def read_plate_from_image(image_path: str) -> str | None:
             logger.info(f"Plate number: {plate_number} read from path: {image_path}")
             return plate_number
         else:
-            logger.warning(f"Unable to retrieve plate number from non-existent path")
+            logger.warning("Unable to retrieve plate number from non-existent path")
             return None
     except Exception as e:
         logger.error(

@@ -4,8 +4,8 @@
 The FBT Enforcement Application is an application that simulates components of a traffic enforcement application. 
 
 ## Team and Roles: 
-https://github.com/Mannuello - Engineer/Researcher
-https://github.com/BrettskiPy - Engineer/QA/DevOps
+- https://github.com/Mannuello - Engineer/Researcher
+- https://github.com/BrettskiPy - Engineer/QA/DevOps
 
 ### Features:
 - License plate recognition

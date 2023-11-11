@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-import pytesseract
+import pytesseract  # type: ignore
 import logging
 from PIL import Image
 
@@ -8,7 +8,7 @@ from PIL import Image
 logger = logging.getLogger(__name__)
 
 
-def read_plate_from_image(image_path: str) -> str | None:
+def read_plate_from_image(image_path: str | None) -> str | None:
     """Reads and returns plate numbers from random plate images"""
     try:
         if image_path:
@@ -43,10 +43,10 @@ def read_plate_from_image(image_path: str) -> str | None:
             plate_number = plate_number.strip()
             logger.info(f"Plate number: {plate_number} read from path: {image_path}")
             return plate_number
-        else:
-            logger.warning(f"Unable to retrieve plate number from non-existent path")
-            return None
     except Exception as e:
         logger.error(
             f"{e} has occured while trying to read plate image path: {image_path}"
         )
+
+    logger.warning("Unable to retrieve plate number from non-existent path")
+    return None

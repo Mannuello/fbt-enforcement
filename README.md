@@ -47,8 +47,14 @@ pytest
 ## Formatter
 This project uses the black formatter.
 
-To run the formatter, use the following command:
+To run the formatter and linter use the following:
+
+#### Bash
 ```
-black .
+ruff check --fix && ruff format .
+```
+#### Powershell
+```
+ruff check --fix . ; if ($?) { ruff format . }
 ```
 #### Note: The formatter will automatically run during the build process, and you must address any issues locally or the build will fail.

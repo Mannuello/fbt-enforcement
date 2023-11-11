@@ -32,13 +32,13 @@ def fake_plate_data():
     ]
 
 
-def fake_plate_asset_path() -> str:
+def fake_plate_asset_path() -> str | None:
     """Returns a random plate image path from a directory of 4 plate images"""
     # Get the directory where the current script is located
-    script_dir = os.path.dirname(os.path.relpath(__file__))
+    plate_asset_dir = os.path.dirname(os.path.abspath(__file__))
 
     # Define the relative path to the "plates" directory
-    directory_path = os.path.join(script_dir, "plates")
+    directory_path = os.path.join(plate_asset_dir, "plates")
 
     image_files = [file for file in os.listdir(directory_path) if file.endswith(".png")]
     if plate_path_choice := random.choice(image_files + [None]):

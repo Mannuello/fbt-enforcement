@@ -1,4 +1,5 @@
 # FBT Enforcement Application
+![car_plate_image](https://github.com/Mannuello/fbt-enforcement/assets/30988215/7878fe20-f8fc-4e7e-8338-da699e2f75e3)
 
 ## Description
 The FBT Enforcement Application is an application that simulates components of a traffic enforcement application. 

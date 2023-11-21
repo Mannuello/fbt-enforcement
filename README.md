@@ -46,7 +46,7 @@ pytest
 #### Note: The tests will automatically launch during the build process, and you must address any issues locally or the build will fail.
 
 ## Formatter
-This project uses the black formatter.
+This project uses the ruff formatter.
 
 To run the formatter and linter use the following:
 

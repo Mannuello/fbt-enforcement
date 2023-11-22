@@ -48,5 +48,5 @@ def read_plate_from_image(image_path: str) -> str | None:
             return None
     except Exception as e:
         logger.error(
-            f"{e} has occured while trying to read plate image path: {image_path}"
+            f"{e} has occurred while trying to read plate image path: {image_path}"
         )
